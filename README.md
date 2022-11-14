@@ -8,10 +8,10 @@ In the project directory, you can run:
 
 Install the dependencies.
 
-### STEP2 `rebuild-sqlite3`
+### STEP2 `npm run rebuild-sqlite3`
 
 Re-complies sqlite3.
 
-### STEP3 `npm start`
+### STEP3 `npm run start`
 
 Launches the application

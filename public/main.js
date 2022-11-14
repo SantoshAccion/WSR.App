@@ -6,7 +6,7 @@ const isDev = require('electron-is-dev');
 
 let mainWindow;
 
-var knex = require('knex')({
+const knex = require('knex')({
   client: 'sqlite3',
   connection: {
     filename: path.join(__dirname, 'WSRApp.db'),
@@ -23,6 +23,7 @@ function createWindow() {
     height: 680,
     webPreferences: {
       nodeIntegration: true,
+      webSecurity: false
     },
   });
   mainWindow.webContents.openDevTools();
