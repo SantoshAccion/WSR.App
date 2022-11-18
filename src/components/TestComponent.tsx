@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 
 export default function TestComponent() {
@@ -6,5 +7,9 @@ export default function TestComponent() {
     console.log('first')
   }, [])
 
-  return <div>WSR App</div>;
+  return (
+    <Typography variant='h4' sx={{color:(theme)=>theme.palette.primary.main,textAlign:'center'}}> Hello WSR Team</Typography> //color='primary'
+  );
 }
+
+

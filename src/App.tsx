@@ -1,21 +1,23 @@
 import React from 'react';
 import TestComponent from './components/TestComponent';
 import { AppProvider } from './context/AppContext';
+import { ThemeProvider } from "@mui/material/styles";
+import { Button, CssBaseline } from "@mui/material";
+
+
+import theme from './Theme'
+
 
 function App() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <AppProvider>
-        <TestComponent />
-      </AppProvider>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <AppProvider>
+          <TestComponent />
+        </AppProvider>
+      </div>
+    </ThemeProvider>
+    
   );
 }
 
