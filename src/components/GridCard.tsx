@@ -173,7 +173,7 @@ export default function GridCard() {
                 id="combo-box-demo"
                 options={top100Films}
                 size="small"
-                sx={{marginRight:'8px',width:'130px'}}
+                sx={{marginRight:'8px',width:'110px'}}
                 renderInput={(params) => 
                     <TextField {...params} 
                         label="Grazing" 
@@ -190,7 +190,7 @@ export default function GridCard() {
                     id="combo-box-demo"
                     options={top100Films}
                     size="small"
-                    sx={{marginRight:'8px'}}
+                    sx={{marginRight:'8px',width:'130px'}}
                     renderInput={(params) => 
                         <TextField {...params} 
                         label="No Irrigation Practice" 

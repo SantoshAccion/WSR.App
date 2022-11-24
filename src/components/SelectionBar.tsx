@@ -194,7 +194,7 @@ const SelectionBar = () => {
                               id="combo-box-demo"
                               options={top100Films}
                               size="small"
-                              sx={{marginRight:'8px'}}
+                              sx={{marginRight:'8px',width:'110px'}}
                               renderInput={(params) => 
                                   <TextField {...params} 
                                     label="Select Year" 
@@ -212,7 +212,7 @@ const SelectionBar = () => {
                               id="combo-box-demo"
                               options={top100Films}
                               size="small"
-                              sx={{marginRight:'8px'}}
+                              sx={{marginRight:'8px',width:'110px'}}
                               renderInput={(params) => <TextField {...params} 
                                 label="Select Crop" 
                                 // inputProps={{style: {fontSize: 12}}} // font size of input text

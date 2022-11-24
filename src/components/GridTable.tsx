@@ -210,7 +210,7 @@ const GridTable = () => {
                             id="combo-box-demo"
                             options={top100Films}
                             size="small"
-                            sx={{marginRight:'8px',width:"50px"}}
+                            sx={{marginRight:'8px',width:"63px"}}
                             renderInput={(params) => <TextField {...params} 
                             label="80%" 
                             // inputProps={{style: {fontSize: 12}}} // font size of input text
@@ -222,10 +222,11 @@ const GridTable = () => {
                             padding: '5px 5px 0px 5px',
                             borderRadius: '5px',
                             lineHeight: '12px',
-                            marginLeft:'6rem'
+                            // marginLeft:'6rem'
                         }}>Cove./Acre 56.45</Typography>
                 </Box>
                 <DataTable />
+                
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Item Two
