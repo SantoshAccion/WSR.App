@@ -13,6 +13,7 @@ import GridCard from './GridCard';
 
 
 
+
 const DisplayGrid = () => {
     const top100Films = [
         { label: 'The Shawshank Redemption', year: 1994 },
@@ -145,10 +146,10 @@ const DisplayGrid = () => {
        <Box sx={{flexGrow: 1,marginTop:'1rem',paddingLeft:'24px',paddingRight:'24px'}} id="autocomplete-box" >
             
             <Grid container spacing={2}>
-                <Box sx={{background: '#D8D8D8'}}>
+                <Box sx={{background: '#D8D8D8',marginTop:'1rem'}}>
                     <AppsIcon />
                 </Box>
-                <Grid item xs={3} sx={{boxShadow: '0px 0px 11px 1px #ccc'}}>
+                <Grid item xs={3} sx={{boxShadow: '0px 0px 11px 1px #ccc',padding:"0px !important",marginTop:'1rem'}}>
                     <Box sx={{ flexGrow: 1,marginTop:'10px', display: {md: 'flex' },justifyContent:'space-between',padding:'5px'}}>
                         <Typography variant='h4'>Enterprise Producer Premium</Typography>
                         <Typography variant='h4'>$10,23000,00</Typography>
@@ -160,10 +161,12 @@ const DisplayGrid = () => {
                         InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                         
                         />
-                        <Box sx={{float: 'right',
+                        <Box sx={{
                                     position: 'relative',
                                     top: '5px',
-                                    left: '5px'}}>
+                                    left: '5px',
+                                    display:'flex'
+                                    }}>
                             <AddIcon color="primary" />
                             <DeleteOutlineTwoToneIcon />
                         </Box>
