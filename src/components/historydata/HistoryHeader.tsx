@@ -49,7 +49,7 @@ const HistoryHeader = () => {
             <Typography>Lock:None |</Typography>
             <Typography>Distribution:60%</Typography>
         </Box>
-        <Box sx={{padding:'16rem',background:'#ECF1F1'}}>
+        <Box sx={{padding:'16rem',background:'#ECF1F1',textAlign:'center'}}>
             <Typography>Historical Data</Typography>
         </Box>
         <Box>

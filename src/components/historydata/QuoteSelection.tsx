@@ -8,7 +8,7 @@ import FormLabel from '@mui/material/FormLabel';
 export default function QuoteSelection() {
   return (
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+      {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="female"

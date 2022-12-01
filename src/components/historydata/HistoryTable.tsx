@@ -13,16 +13,24 @@ function createData(
   fat: number,
   carbs: number,
   protein: number,
+  creatine: number,
+  diet: number,
+
+  
+
+
+
+
 ) {
-  return { name, calories, fat, carbs, protein };
+  return { name, calories, fat, carbs, protein,creatine,diet };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('80%', 159, 6.0, 24, 4.0 , 50, 80),
+  createData('90%', 237, 9.0, 37, 4.3, 50, 80),
+  createData('70%', 262, 16.0, 24, 6.0, 50, 80),
+  createData('60%', 305, 3.7, 67, 4.3, 50, 80),
+  createData('50%', 356, 16.0, 49, 3.9, 50, 80),
 ];
 
 export default function HistoryTable() {
@@ -31,11 +39,13 @@ export default function HistoryTable() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell> </TableCell>
+            <TableCell align="right">Indeminity</TableCell>
+            <TableCell align="right">Premium</TableCell>
+            <TableCell align="right">Net</TableCell>
+            <TableCell align="right">% years paid</TableCell>
+            <TableCell align="right">Indeminity/$1</TableCell>
+            <TableCell align="right">Out of Pocket</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -51,6 +61,8 @@ export default function HistoryTable() {
               <TableCell align="right">{row.fat}</TableCell>
               <TableCell align="right">{row.carbs}</TableCell>
               <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.creatine}</TableCell>
+              <TableCell align="right">{row.diet}</TableCell>
             </TableRow>
           ))}
         </TableBody>

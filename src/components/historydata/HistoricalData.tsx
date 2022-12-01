@@ -1,5 +1,5 @@
 import React from 'react'
-import {Typography} from '@mui/material'
+// import {Box,Typography, Grid} from '@mui/material'
 import TextField from '@mui/material/TextField';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteOutlineTwoToneIcon from '@mui/icons-material/DeleteOutlineTwoTone';
@@ -9,60 +9,70 @@ import GridCard from '../GridCard';
 import HistoryHeader from './HistoryHeader';
 import QuoteSelection from './QuoteSelection';
 
+
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
 
 
-const useStyles = makeStyles({
-  mainbox: {
-    flexGrow: 1,
-    marginTop:'1rem',
-    // paddingLeft:'24px',
-    // paddingRight:'24px'
-  },
-  appbox:{
-    background: '#D8D8D8',
-    marginTop:'1rem'
-  },
-//   grid3:{
+
+// const useStyles = makeStyles({
+//   mainbox: {
+//     flexGrow: 1,
+//     marginTop:'1rem',
+//     // paddingLeft:'24px',
+//     // paddingRight:'24px'
+//   },
+//   appbox:{
+//     background: '#D8D8D8',
+//     marginTop:'1rem'
+//   },
+// //   grid3:{
+// //     display: 'flex',
+// //     paddingTop:'3px !important'
+// //   },
+//   premium:{
+//     flexGrow: 1,
 //     display: 'flex',
-//     paddingTop:'3px !important'
+//     justifyContent:'space-between',
+//     padding:'5px'
+
 //   },
-  premium:{
-    flexGrow: 1,
-    display: 'flex',
-    justifyContent:'space-between',
-    padding:'5px'
-
-  },
-//   grid9:{
-//     display:'flex',
-//     justifyContent:'space-around',
-//     paddingLeft:'0px !important',
-//     paddingTop:'0px !important'
+// //   grid9:{
+// //     display:'flex',
+// //     justifyContent:'space-around',
+// //     paddingLeft:'0px !important',
+// //     paddingTop:'0px !important'
+// //   },
+//   outerborder:{
+//     border: '1px solid',
+//     borderRadius: '20px',
+//     padding: '2px',
+//     marginRight:'5px'
 //   },
-  outerborder:{
-    border: '1px solid',
-    borderRadius: '20px',
-    padding: '2px',
-    marginRight:'5px'
-  },
-  middlebox:{
-    background:'#fff'
-  }
+//   middlebox:{
+//     background:'#fff',
+//     padding:'24px 24px 24px 24px'
+//   }
 
 
-});
+// });
 
 
 
 
 
 const HistoricalData = () => {
-  const classes = useStyles();
+//   const classes = useStyles();
 
     const top100Films = [
         { label: 'The Shawshank Redemption', year: 1994 },
@@ -190,13 +200,6 @@ const HistoricalData = () => {
         { label: '3 Idiots', year: 2009 },
         { label: 'Monty Python and the Holy Grail', year: 1975 },
       ];
-      const Item = styled(Paper)(({ theme }) => ({
-        backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-        ...theme.typography.body2,
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-      }));
   return (
     <>
        {/* <Box className={classes.mainbox} id="autocomplete-box" sx={{backgroundColor: '#DFE0E0',marginTop:'2rem'}}>
@@ -204,7 +207,7 @@ const HistoricalData = () => {
                 <Grid item xs={3} id="historical-grid">
                     <GridCard />
                 </Grid>
-                <Grid item xs={6} className={classes.middlebox}>
+                <Grid item xs={7} className={classes.middlebox}>
                     <HistoryHeader />
                 </Grid>
                 <Grid item xs={2}>
@@ -213,21 +216,19 @@ const HistoricalData = () => {
             </Grid>
             
         </Box> */}
-
-        <Box sx={{ flexGrow: 1,background: '#F2F2F2' }} >
-            <Grid container spacing={3}>
+        <Box id="autocomplete-box" sx={{flexGrow: 1,backgroundColor: '#DFE0E0',marginTop:'2rem'}}>
+            <Grid container spacing={3} sx={{margin:'5px'}}>
                 <Grid xs id="historical-grid">
-                    <GridCard />
+                    <Item sx={{padding:0}}><GridCard /></Item>
                 </Grid>
-                <Grid xs={6} className={classes.middlebox}>
-                    <HistoryHeader />
+                <Grid xs={7} sx={{padding:0,marginTop:'12px'}}>
+                    <Item><HistoryHeader /></Item>
                 </Grid>
                 <Grid xs>
-                    <QuoteSelection />
+                    <Item><QuoteSelection /></Item>
                 </Grid>
             </Grid>
         </Box>
-      
     </>
   )
 }
