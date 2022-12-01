@@ -10,7 +10,7 @@ const MenuItem = () => {
   return (
     <>
         <AppBar position="static" sx={{backgroundColor:'#F6F6F6',boxShadow:'none'}}>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" sx={{marginLeft: 'unset',paddingLeft:'4px !important'}}>
                 <Toolbar disableGutters sx={{minHeight:'20px !important'}}>
                     <Box sx={{ flexGrow: 1, display: {md: 'flex' } }}> 
                         {pages.map((page) => (

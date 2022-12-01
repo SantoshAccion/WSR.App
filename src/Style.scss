@@ -1,16 +1,82 @@
-#autocomplete-box .MuiOutlinedInput-root{
-   padding-top: 0px;
-   padding-bottom: 0px;
-//    padding: 0px 70px 0px 0px;
+#autocomplete-box {
+    .MuiOutlinedInput-root{
+        padding-top: 0px;
+        padding-bottom: 0px;
+     }
+
 }
+
 #textfield-box {
     legend{
         height: auto;
     }
 }
-#grid-panel .css-19kzrtu {
-    padding: 5px;
+#grid-panel {
+    .MuiTabs-flexContainer{
+        justify-content: space-between;
+    }
+    .css-19kzrtu {
+        padding: 7px;
+    }
+}
+#grid-card-panel{
+    .MuiTabs-flexContainer{
+        justify-content: space-between;
+    }
+    .css-19kzrtu {
+        padding: 5px;
+    }
+    .MuiTypography-body1{
+        display: flex;
+    }
+    
+}
+#head-tab {
+    min-height: auto;
+    button{
+        background: #45494D;
+        color: #fff;
+        min-height: auto;
+        border-radius: 5px;
+    }
 }
 
+#data-table {
+    th{
+        padding: 0;
+        width: 70px;
+    }
+    td{
+        padding: 0;
+    }
+    
+}
+#tabpanel {
+    span{
+        font-size: 12px;
+    }
+    .MuiListItemSecondaryAction-root{
+        font-size: 12px;
+    }
+    li{
+        padding-bottom: 0px;
+        padding-top:0px;
+       
+    }
+    li:nth-child(2) .MuiListItemSecondaryAction-root{
+        color:#C92C2C;
+    }
+    li:nth-child(3) .MuiListItemSecondaryAction-root{
+        color:#3C8519;
+    }
+
+
+}
+#historical-grid{
+    #cards{
+        width:auto;
+        max-width: none;
+    }
+}
 
 

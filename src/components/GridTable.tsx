@@ -3,9 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
+
 import { makeStyles } from '@mui/styles';
 import DataTable from './DataTable';
 
@@ -173,9 +171,12 @@ interface TabPanelProps {
           padding: '0px',
           },
         },
+    prodFact:{
+      display: 'flex'
+    }
     }));
 
-const GridTable = () => {
+const GridTable = (props) => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -184,7 +185,7 @@ const GridTable = () => {
 
   return (
     <>
-        <Box sx={{ width: '100%' }} id="grid-panel">
+        <Box sx={{ width: '100%',marginTop:'10px' }} id="grid-panel">
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" 
                 TabIndicatorProps={{
@@ -199,33 +200,8 @@ const GridTable = () => {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <Typography variant='h3'>Prod.Factor 1.45</Typography>
-                <Box>
-                    <Slider defaultValue={50} size="small" aria-label="Default" valueLabelDisplay="auto" />
-                </Box>
-                <Box sx={{ flexGrow: 1,marginTop:'10px', display: {md: 'flex' }}}>
-                    <Typography variant='h3'>Coverage Level</Typography>
-                        <Autocomplete
-                            disablePortal
-                            id="combo-box-demo"
-                            options={top100Films}
-                            size="small"
-                            sx={{marginRight:'8px',width:"63px"}}
-                            renderInput={(params) => <TextField {...params} 
-                            label="80%" 
-                            // inputProps={{style: {fontSize: 12}}} // font size of input text
-                            InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
-                            />}
-                        />
-                        <Typography variant='h6' sx={{
-                            background: '#DFF2FF',
-                            padding: '5px 5px 0px 5px',
-                            borderRadius: '5px',
-                            lineHeight: '12px',
-                            // marginLeft:'6rem'
-                        }}>Cove./Acre 56.45</Typography>
-                </Box>
-                <DataTable />
+                
+                <DataTable tableColor={props.tableColor}/>
                 
             </TabPanel>
             <TabPanel value={value} index={1}>

@@ -4,7 +4,7 @@ const theme = createTheme({
     palette: {
         primary: { main: "#1F6FA4",light:"skyblue" },
         secondary: { main: "#000000",light:"skyblue" },
-        text: { primary: "#010101", secondary: "#000000" }
+        text: { primary: "#000000", secondary: "#000000" }
     },
     typography: {
         fontFamily: "'Helvetica Neue', sans-serif",

@@ -1,26 +1,67 @@
 import React from 'react'
-import VisibilityIcon from '@mui/icons-material/Visibility';
-// import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
-import Autocomplete from '@mui/material/Autocomplete';
-import {Box,Typography, Grid} from '@mui/material'
+import {Typography} from '@mui/material'
 import TextField from '@mui/material/TextField';
+import AddIcon from '@mui/icons-material/Add';
 import DeleteOutlineTwoToneIcon from '@mui/icons-material/DeleteOutlineTwoTone';
-import { ClassNames } from '@emotion/react';
+import Autocomplete from '@mui/material/Autocomplete';
 import { makeStyles } from '@mui/styles';
+import GridCard from '../GridCard';
+import HistoryHeader from './HistoryHeader';
+import QuoteSelection from './QuoteSelection';
+
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Unstable_Grid2';
+
 
 
 const useStyles = makeStyles({
+  mainbox: {
+    flexGrow: 1,
+    marginTop:'1rem',
+    // paddingLeft:'24px',
+    // paddingRight:'24px'
+  },
+  appbox:{
+    background: '#D8D8D8',
+    marginTop:'1rem'
+  },
+//   grid3:{
+//     display: 'flex',
+//     paddingTop:'3px !important'
+//   },
+  premium:{
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent:'space-between',
+    padding:'5px'
+
+  },
+//   grid9:{
+//     display:'flex',
+//     justifyContent:'space-around',
+//     paddingLeft:'0px !important',
+//     paddingTop:'0px !important'
+//   },
   outerborder:{
     border: '1px solid',
     borderRadius: '20px',
-    padding: '2px'
+    padding: '2px',
+    marginRight:'5px'
+  },
+  middlebox:{
+    background:'#fff'
   }
+
 
 });
 
 
 
-const QuoteList = () => {
+
+
+const HistoricalData = () => {
   const classes = useStyles();
 
     const top100Films = [
@@ -149,37 +190,46 @@ const QuoteList = () => {
         { label: '3 Idiots', year: 2009 },
         { label: 'Monty Python and the Holy Grail', year: 1975 },
       ];
+      const Item = styled(Paper)(({ theme }) => ({
+        backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+        ...theme.typography.body2,
+        padding: theme.spacing(1),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+      }));
   return (
-    <div>
-        <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'5px',paddingRight:'5px', display: {md: 'flex' },justifyContent:'space-between'}}> 
-            <VisibilityIcon />
-            <Box>
-                <Autocomplete
-                    disablePortal
-                    id="combo-box-demo"
-                    options={top100Films}
-                    size="small"
-                    sx={{marginRight:'8px',width:'101px'}}
-                    renderInput={(params) => 
-                        <TextField {...params} 
-                            label="243431" 
-                            // inputProps={{style: {fontSize: 12}}} // font size of input text
-                            InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
-                        />
-                    }
-                />
-            </Box>
+    <>
+       {/* <Box className={classes.mainbox} id="autocomplete-box" sx={{backgroundColor: '#DFE0E0',marginTop:'2rem'}}>
+            <Grid container spacing={3}>
+                <Grid item xs={3} id="historical-grid">
+                    <GridCard />
+                </Grid>
+                <Grid item xs={6} className={classes.middlebox}>
+                    <HistoryHeader />
+                </Grid>
+                <Grid item xs={2}>
+                    <QuoteSelection />
+                </Grid>
+            </Grid>
             
-                <TextField className="textbox-outlined" id="outlined-basic" label="GISI" variant="outlined" size="small" sx={{width:200}}
-                    inputProps={{style: {fontSize: 12,height: 11}}} // font size of input text
-                    InputLabelProps={{style: {fontSize: 12}}} // font size of input label
-                />
-                {/* <ContentCopyRoundedIcon color="primary"/> */}
-                <DeleteOutlineTwoToneIcon className={classes.outerborder} color="primary"/>
-            
+        </Box> */}
+
+        <Box sx={{ flexGrow: 1,background: '#F2F2F2' }} >
+            <Grid container spacing={3}>
+                <Grid xs id="historical-grid">
+                    <GridCard />
+                </Grid>
+                <Grid xs={6} className={classes.middlebox}>
+                    <HistoryHeader />
+                </Grid>
+                <Grid xs>
+                    <QuoteSelection />
+                </Grid>
+            </Grid>
         </Box>
-    </div>
+      
+    </>
   )
 }
 
-export default QuoteList
+export default HistoricalData;

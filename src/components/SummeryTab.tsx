@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+
 interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
@@ -42,9 +43,11 @@ const SummeryTab = () => {
         setValue(newValue);
       };
 
+
+
   return (
     <>
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%' }} id="grid-panel">
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" 
             TabIndicatorProps={{
@@ -59,7 +62,7 @@ const SummeryTab = () => {
             </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-            Item One
+          
         </TabPanel>
         <TabPanel value={value} index={1}>
             Item Two

@@ -6,6 +6,7 @@ import { ThemeProvider } from "@mui/material/styles";
 // import { Button, CssBaseline } from "@mui/material";
 import theme from './Theme'
 import Dashboard from './components/Dashboard';
+import HistoricalData from './components/historydata/HistoricalData';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div>
         <AppProvider>
           <Dashboard />
+          {/* <HistoricalData /> */}
         </AppProvider>
       </div>
     </ThemeProvider>

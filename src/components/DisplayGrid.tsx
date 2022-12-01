@@ -1,6 +1,5 @@
 import React from 'react'
 import {Box,Typography, Grid} from '@mui/material'
-import AppsIcon from '@mui/icons-material/Apps';
 import TextField from '@mui/material/TextField';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteOutlineTwoToneIcon from '@mui/icons-material/DeleteOutlineTwoTone';
@@ -8,13 +7,57 @@ import Autocomplete from '@mui/material/Autocomplete';
 import QuoteList from './QuoteList';
 import AgentInfo from './AgentInfo';
 import SummeryTab from './SummeryTab';
-import GridCard from './GridCard';
+import { makeStyles } from '@mui/styles';
+import LeftPanel from './LeftPanel';
+import GridCardTab from './GridCardTab';
+
+
+
+const useStyles = makeStyles({
+  mainbox: {
+    flexGrow: 1,
+    marginTop:'1rem',
+    // paddingLeft:'24px',
+    // paddingRight:'24px'
+  },
+  appbox:{
+    background: '#D8D8D8',
+    marginTop:'1rem'
+  },
+  grid3:{
+    display: 'flex',
+    paddingTop:'3px !important'
+  },
+  premium:{
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent:'space-between',
+    padding:'5px'
+
+  },
+  grid9:{
+    display:'flex',
+    justifyContent:'space-around',
+    paddingLeft:'0px !important',
+    paddingTop:'0px !important'
+  },
+  outerborder:{
+    border: '1px solid',
+    borderRadius: '20px',
+    padding: '2px',
+    marginRight:'5px'
+  }
+
+
+});
 
 
 
 
 
 const DisplayGrid = () => {
+  const classes = useStyles();
+
     const top100Films = [
         { label: 'The Shawshank Redemption', year: 1994 },
         { label: 'The Godfather', year: 1972 },
@@ -143,84 +186,82 @@ const DisplayGrid = () => {
       ];
   return (
     <>
-       <Box sx={{flexGrow: 1,marginTop:'1rem',paddingLeft:'24px',paddingRight:'24px'}} id="autocomplete-box" >
-            
+       <Box className={classes.mainbox} id="autocomplete-box" sx={{backgroundColor: '#DFE0E0',marginTop:'2rem'}}>
             <Grid container spacing={2}>
-                <Box sx={{background: '#D8D8D8',marginTop:'1rem'}}>
-                    <AppsIcon />
-                </Box>
-                <Grid item xs={3} sx={{boxShadow: '0px 0px 11px 1px #ccc',padding:"0px !important",marginTop:'1rem'}}>
-                    <Box sx={{ flexGrow: 1,marginTop:'10px', display: {md: 'flex' },justifyContent:'space-between',padding:'5px'}}>
-                        <Typography variant='h4'>Enterprise Producer Premium</Typography>
-                        <Typography variant='h4'>$10,23000,00</Typography>
-                    </Box>
-                    <AgentInfo />
-                    <Box id="textfield-box" sx={{ flexGrow: 1,display: {md: 'flex' },justifyContent:'space-between',padding:'5px'}}>
-                        <TextField id="outlined-basic" label="Quote 1" variant="outlined" size="small"  sx={{width: 235}}
-                        inputProps={{style: {fontSize: 12}}} // font size of input text
-                        InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
-                        
-                        />
-                        <Box sx={{
-                                    position: 'relative',
-                                    top: '5px',
-                                    left: '5px',
-                                    display:'flex'
-                                    }}>
-                            <AddIcon color="primary" />
-                            <DeleteOutlineTwoToneIcon />
-                        </Box>
-                     
-                    </Box>
-                    <Box>
-                    <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'1.5rem', display: {md: 'flex' }}} id="selection-box" > 
-                      <Box>
-                          <Autocomplete
-                              disablePortal
-                              id="combo-box-demo"
-                              options={top100Films}
-                              size="small"
-                              sx={{marginRight:'8px',width:'110px'}}
-                              renderInput={(params) => 
-                                  <TextField {...params} 
-                                    label="State" 
-                                    // inputProps={{style: {fontSize: 12}}} // font size of input text
-                                    InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
+                <Grid item xs={3} className={classes.grid3} >
+                    <LeftPanel />
+                    <Box sx={{marginLeft:'.5rem',marginRight:'.5rem',backgroundColor:'#fff',width:'100%'}}>
+                      <Box className={classes.premium} sx={{marginTop:'10px'}}>
+                          <Typography variant='h4'>Enterprise Producer Premium</Typography>
+                          <Typography variant='h4'>$10,23000,00</Typography>
+                      </Box>
+                      {/* loop ll start from here */}
+                      <AgentInfo />
+                      <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'7px',paddingRight:'7px', display: {md: 'flex' }}} id="selection-box" > 
+                            <Box>
+                                <Autocomplete
+                                    disablePortal
+                                    id="combo-box-demo"
+                                    options={top100Films}
+                                    size="small"
+                                    sx={{marginRight:'8px',width:'112px'}}
+                                    renderInput={(params) => 
+                                        <TextField {...params} 
+                                          label="State" 
+                                          // inputProps={{style: {fontSize: 12}}} // font size of input text
+                                          InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
+                                        />
+                                      
+                                      }
                                   />
                                 
-                                }
-                            />
-                           
+                            </Box>
+                            <Box>
+                                <Autocomplete
+                                    disablePortal
+                                    id="combo-box-demo"
+                                    options={top100Films}
+                                    size="small"
+                                    sx={{marginRight:'8px',width:'112px'}}
+                                    renderInput={(params) => <TextField {...params} 
+                                      label="Country" 
+                                      // inputProps={{style: {fontSize: 12}}} // font size of input text
+                                      InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
+                                    />}
+                                  />
+                            </Box>
                       </Box>
+                     
                       <Box>
-                          <Autocomplete
-                              disablePortal
-                              id="combo-box-demo"
-                              options={top100Films}
-                              size="small"
-                              sx={{marginRight:'8px',width:'110px'}}
-                              renderInput={(params) => <TextField {...params} 
-                                label="Country" 
-                                // inputProps={{style: {fontSize: 12}}} // font size of input text
-                                InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
-                              />}
-                            />
+                          <Box id="textfield-box" className={classes.premium}>
+                              <TextField id="outlined-basic" label="Quote 1" variant="outlined" size="small"  sx={{width: 235}}
+                              inputProps={{style: {fontSize: 12}}} // font size of input text
+                              InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
+                              
+                              />
+                              <Box sx={{
+                                          position: 'relative',
+                                          top: '5px',
+                                          left: '5px',
+                                          display:'flex'
+                                          }}>
+                                  <AddIcon className={classes.outerborder} color="primary" />
+                                  <DeleteOutlineTwoToneIcon className={classes.outerborder} color="primary" />
+                              </Box>
+                          
+                          </Box>
+                          <QuoteList />
+                          <QuoteList />
+                          <QuoteList />
                       </Box>
-                    </Box>
-                    <QuoteList />
-                    <QuoteList />
-                    <QuoteList />
-                    </Box>
-                    <Box sx={{background:'#F5F5F5',height:'15rem'}}>
-                        <AgentInfo />
-                       
-                    </Box>
-                    <SummeryTab />
+                      {/* loop will end here */}
                     
+                      <SummeryTab />
+                    </Box> 
 
                 </Grid>
-                <Grid item xs={8}>
-                    <GridCard />
+                <Grid item xs={9} className={classes.grid9}>
+                    <GridCardTab />
                 </Grid>
             </Grid>
             

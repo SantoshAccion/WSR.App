@@ -8,6 +8,11 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { makeStyles } from '@mui/styles';
 import DataTable from './DataTable';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import CommentIcon from '@mui/icons-material/Comment';
+import IconButton from '@mui/material/IconButton';
 
 
 
@@ -49,6 +54,30 @@ const GridCardSummery = () => {
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
       };
+      
+      const summery = [
+        {
+        name:'Subsidy',
+        value:'55%'
+      },
+      {
+        name:'Total Premium',
+        value:'$0.00'
+      },
+      {
+        name:'Total Indemenity',
+        value:'$0.00'
+      },
+      {
+        name:'Net Indeminity',
+        value:'$0.00'
+      },
+      {
+        name:'Net Coverage',
+        value:'$0.00'
+      }
+    ]
+
 
   return (
     <>
@@ -70,6 +99,21 @@ const GridCardSummery = () => {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
+                <List id="tabpanel" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                      {summery.map((item) => (
+                        <ListItem
+                          key={item.value}
+                          disableGutters
+                          secondaryAction={
+                            // <IconButton aria-label="comment">
+                              item.value
+                            // </IconButton>
+                          }
+                  >
+                    <ListItemText primary={`${item.name}`}/>
+                    </ListItem>
+                  ))}
+              </List>
                 
             </TabPanel>
             <TabPanel value={value} index={1}>

@@ -13,6 +13,11 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import GridTable from './GridTable';
 import GridCardSummery from './GridCardSummery';
+import { makeStyles } from '@mui/styles';
+import Slider from '@mui/material/Slider';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import PlaceIcon from '@mui/icons-material/Place';
+
 
 const top100Films = [
     { label: 'The Shawshank Redemption', year: 1994 },
@@ -149,24 +154,62 @@ const bull = (
     •
   </Box>
 );
+const useStyles = makeStyles(theme => ({
+  tab: { 
+      '& .MuiBox-root': {
+        padding: '0px',
+        },
+      },
+  prodFact:{
+    display: 'flex',
+    paddingLeft:'7px',
+    paddingRight:'7px'
+  },
+  card:{
+    maxWidth: 350 ,
+    padding:'0px !important',
+    width:340,
+    boxShadow: '0px 0px 10px 1px #bdbdbd',
+    marginRight: '10px'
+    },
+    outerborder:{
+      border: '1px solid',
+      borderRadius: '5px',
+      padding: '2px',
+      marginRight:'5px'
+    },
+    restarticon:{
+      border: '1px solid',
+      padding: '2px',
+      position:'relative',
+      top: '0.4rem',
+      borderRadius:'20px'
+    }
+  }));
 
-export default function GridCard() {
+
+
+export default function GridCard(props) {
+  const classes = useStyles();
+  const background = props.backColor;
+
   return (
-    <Card sx={{ maxWidth: 275 ,padding:'0px !important'}}>
+    <Card className={classes.card} id="cards">
       <CardContent sx={{padding:0}}>
         <Box 
             sx={{ flexGrow: 1, display: {md: 'flex' },
             justifyContent:'space-between',
             padding:'5px',
-            background:'#BFE6CC'
+            background:background
             }}>
             <Typography variant='h6'>243421 GIS1</Typography>
             <Box sx={{display: {md: 'flex' }}}>
-                <ShowChartRoundedIcon color="primary" />
-                <PostAddIcon color="primary"/>
+                <PostAddIcon className={classes.outerborder} color="primary"/>
+                <ShowChartRoundedIcon className={classes.outerborder} color="primary" />
+                <KeyboardArrowUpIcon className={classes.outerborder} color="primary" />
             </Box>
         </Box>
-        <Box sx={{ flexGrow: 1, marginTop:'10px',display: {md: 'flex' },justifyContent:'space-around' }}> 
+        <Box sx={{ flexGrow: 1,paddingLeft:'7px',paddingRight:'7px', marginTop:'10px',display: {md: 'flex' },justifyContent:'space-around' }}> 
             <Box>
                 <Autocomplete
                 disablePortal
@@ -185,12 +228,12 @@ export default function GridCard() {
                 />
             </Box>
             <Box>
-            <Autocomplete
+              <Autocomplete
                     disablePortal
                     id="combo-box-demo"
                     options={top100Films}
                     size="small"
-                    sx={{marginRight:'8px',width:'130px'}}
+                    sx={{marginRight:'8px',width:'170px'}}
                     renderInput={(params) => 
                         <TextField {...params} 
                         label="No Irrigation Practice" 
@@ -201,11 +244,13 @@ export default function GridCard() {
                     }
                 />
             </Box>
+            <PlaceIcon className={classes.restarticon} sx={{top:0}} color="primary"/>
+
         </Box>
-        <Box sx={{padding:'5px'}}>
+        <Box sx={{paddingLeft:'7px',paddingRight:'7px'}}>
             <Box id="textfield-box" sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
                 <Typography variant='h6'>share</Typography>
-                <TextField id="outlined-basic" label="100%" variant="outlined" size="small"  sx={{width: 100,paddingRight: '1.29rem'}}
+                <TextField id="outlined-basic" label="100%" variant="outlined" size="small"  sx={{width: 100,paddingRight: '2.29rem'}}
                             inputProps={{style: {fontSize: 12}}} // font size of input text
                             InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                             
@@ -215,40 +260,71 @@ export default function GridCard() {
             <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
                 <Typography variant='h6'>Insurable Acres by County</Typography>
                 <Box id="textfield-box">
-                    <TextField id="outlined-basic" label="10000" variant="outlined" size="small"  sx={{width: 100}}
+                    <TextField id="outlined-basic" label="10000" variant="outlined" size="small"  sx={{width: 100,marginRight:'7px'}}
                                 inputProps={{style: {fontSize: 12}}} // font size of input text
                                 InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                                 
                                 />
-                    <RestartAltIcon color="primary" sx={{width:'20px',position:'relative',top: '0.5rem'}}/>
+                    <RestartAltIcon color="primary" className={classes.restarticon} />
                 </Box>
 
             </Box>
             <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
                 <Typography variant='h6'>Insurable Acres</Typography>
                 <Box id="textfield-box">
-                    <TextField id="outlined-basic" label="500" variant="outlined" size="small"  sx={{width: 100}}
+                    <TextField id="outlined-basic" label="500" variant="outlined" size="small"  sx={{width: 100,marginRight:'7px'}}
                                 inputProps={{style: {fontSize: 12}}} // font size of input text
                                 InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                                 
                                 />
-                    <RestartAltIcon color="primary" sx={{width:'20px',position:'relative',top: '0.5rem'}} />
+                    <RestartAltIcon color="primary" className={classes.restarticon} />
                 </Box>
                 
 
             </Box>
         </Box>
-        <Box sx={{ flexGrow: 1, marginTop:'10px',marginBottom:'5px',display: {md: 'flex' },justifyContent:'space-around',borderBottom:'1px solid #EAEAEA' }}>
-            <Typography variant='h6' sx={{
-                background: '#DFF2FF',
-                padding: '5px 5px 0px 5px',
-                borderRadius: '5px',
-                lineHeight: '12px',
-                marginLeft:'6rem'
-            }}>County Based Value 56.45</Typography>
-            <LightbulbIcon color='primary'/>
+      
+        <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between',paddingLeft:'7px',paddingRight:'7px' }}>
+                <Typography variant='h6'>County Based Value</Typography>
+                <Box sx={{display: {md: 'flex' }}}>
+                    <Typography sx={{ background: '#BCD5E3',
+                      padding: '5px 5px 0px 5px',
+                      borderRadius: '5px',marginRight:'7px'}}>
+                      56.45
+                  </Typography>
+
+                  <LightbulbIcon color='primary' className={classes.restarticon} sx={{top:0}} />
+                </Box>
+
         </Box>
-        <GridTable />
+        <Box className={classes.prodFact}>
+                    <Typography variant='h3' sx={{lineHeight:2.167}}> Prod.Factor 1.45 </Typography>
+                    <Slider defaultValue={50} size="small" aria-label="Default" valueLabelDisplay="auto" sx={{marginLeft:'4rem',width:'50%'}}/>
+        </Box>
+        <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'7px',paddingRight:'7px', display: {md: 'flex' }}}>
+            <Typography variant='h3' sx={{lineHeight:2.167}}>Coverage Level</Typography>
+                <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={top100Films}
+                    size="small"
+                    sx={{marginRight:'4rem',width:"63px",marginLeft:'10px'}}
+                    renderInput={(params) => <TextField {...params} 
+                    label="80%" 
+                    // inputProps={{style: {fontSize: 12}}} // font size of input text
+                    InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
+                    />}
+                />
+                <Typography variant='h6' sx={{
+                    background: '#DFF2FF',
+                    padding: '5px 5px 0px 5px',
+                    borderRadius: '5px',
+                    lineHeight: '12px',
+                    // marginLeft:'6rem'
+                }}>Cove./Acre 56.45</Typography>
+        </Box>
+
+        <GridTable tableColor={background}/>
         <GridCardSummery />
       
         
