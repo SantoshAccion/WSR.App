@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Style.scss";
+import "./Responsive.scss"
 // import TestComponent from './components/TestComponent';
 import { AppProvider } from './context/AppContext';
 import { ThemeProvider } from "@mui/material/styles";

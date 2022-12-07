@@ -47,7 +47,7 @@ const GridCardTab = () => {
 
     return (
         <Box sx={{ width: '100%' }} id="grid-card-panel">
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider',marginLeft:'0.35rem' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" id="head-tab"
                     TabIndicatorProps={{
                         sx: {

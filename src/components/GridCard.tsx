@@ -162,13 +162,14 @@ const useStyles = makeStyles(theme => ({
       },
   prodFact:{
     display: 'flex',
-    paddingLeft:'7px',
-    paddingRight:'7px'
+    paddingLeft:'10px',
+    paddingRight:'10px'
   },
   card:{
     maxWidth: 350 ,
     padding:'0px !important',
-    width:340,
+    // width:340,
+    width:250,
     boxShadow: '0px 0px 10px 1px #bdbdbd',
     marginRight: '10px'
     },
@@ -176,14 +177,18 @@ const useStyles = makeStyles(theme => ({
       border: '1px solid',
       borderRadius: '5px',
       padding: '2px',
-      marginRight:'5px'
+      marginRight:'6px',
+      height:'14px !important',
+      width:'14px !important'
     },
     restarticon:{
       border: '1px solid',
       padding: '2px',
       position:'relative',
-      top: '0.4rem',
-      borderRadius:'20px'
+      top: '5px !important',
+      borderRadius:'20px',
+      height:'12px !important',
+      width:'12px !important'
     }
   }));
 
@@ -199,14 +204,14 @@ export default function GridCard(props) {
         <Box 
             sx={{ flexGrow: 1, display: {md: 'flex' },
             justifyContent:'space-between',
-            padding:'5px',
+            padding:'10px',
             background:background
             }}>
-            <Typography variant='h6'>243421 GIS1</Typography>
+            <Typography variant='h6' sx={{lineHeight:'unset'}}>243421 GIS1</Typography>
             <Box sx={{display: {md: 'flex' }}}>
                 <PostAddIcon className={classes.outerborder} color="primary"/>
                 <ShowChartRoundedIcon className={classes.outerborder} color="primary" />
-                <KeyboardArrowUpIcon className={classes.outerborder} color="primary" />
+                <KeyboardArrowUpIcon sx={{marginRight:'0px'}} className={classes.outerborder} color="primary" />
             </Box>
         </Box>
         <Box sx={{ flexGrow: 1,paddingLeft:'7px',paddingRight:'7px', marginTop:'10px',display: {md: 'flex' },justifyContent:'space-around' }}> 
@@ -216,12 +221,12 @@ export default function GridCard(props) {
                 id="combo-box-demo"
                 options={top100Films}
                 size="small"
-                sx={{marginRight:'8px',width:'110px'}}
+                sx={{marginRight:'6px',width:'78px'}}
                 renderInput={(params) => 
                     <TextField {...params} 
                         label="Grazing" 
                         // inputProps={{style: {fontSize: 12}}} // font size of input text
-                        InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
+                        InputLabelProps={{style: {fontSize: 10,top: '-3px'}}} // font size of input label
                     />
                     
                     }
@@ -233,12 +238,12 @@ export default function GridCard(props) {
                     id="combo-box-demo"
                     options={top100Films}
                     size="small"
-                    sx={{marginRight:'8px',width:'170px'}}
+                    sx={{marginRight:'6px',width:'130px'}}
                     renderInput={(params) => 
                         <TextField {...params} 
                         label="No Irrigation Practice" 
                         // inputProps={{style: {fontSize: 12}}} // font size of input text
-                        InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
+                        InputLabelProps={{style: {fontSize: 9}}} // font size of input label
                         />
                     
                     }
@@ -247,10 +252,10 @@ export default function GridCard(props) {
             <PlaceIcon className={classes.restarticon} sx={{top:0}} color="primary"/>
 
         </Box>
-        <Box sx={{paddingLeft:'7px',paddingRight:'7px'}}>
+        <Box sx={{paddingLeft:'10px',paddingRight:'10px'}}>
             <Box id="textfield-box" sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
-                <Typography variant='h6'>share</Typography>
-                <TextField id="outlined-basic" label="100%" variant="outlined" size="small"  sx={{width: 100,paddingRight: '2.29rem'}}
+                <Typography variant='h6' sx={{lineHeight:'1.9rem'}}>share</Typography>
+                <TextField id="outlined-basic" label="100%" variant="outlined" size="small"  sx={{width: 80,paddingRight: '1.6rem',height:'20px'}}
                             inputProps={{style: {fontSize: 12}}} // font size of input text
                             InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                             
@@ -258,57 +263,57 @@ export default function GridCard(props) {
                 
             </Box>
             <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
-                <Typography variant='h6'>Insurable Acres by County</Typography>
+                <Typography variant='h6' sx={{width:'103px',lineHeight:1.3}}>Insurable Acres by County</Typography>
                 <Box id="textfield-box">
-                    <TextField id="outlined-basic" label="10000" variant="outlined" size="small"  sx={{width: 100,marginRight:'7px'}}
+                    <TextField id="outlined-basic" label="10000" variant="outlined" size="small"  sx={{width: 80,marginRight:'7px'}}
                                 inputProps={{style: {fontSize: 12}}} // font size of input text
                                 InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                                 
                                 />
-                    <RestartAltIcon color="primary" className={classes.restarticon} />
+                    <RestartAltIcon color="primary" sx={{top:'12px !important'}} className={classes.restarticon} />
                 </Box>
 
             </Box>
             <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
-                <Typography variant='h6'>Insurable Acres</Typography>
+                <Typography variant='h6' sx={{lineHeight:'2.9rem'}}>Insurable Acres</Typography>
                 <Box id="textfield-box">
                     <TextField id="outlined-basic" label="500" variant="outlined" size="small"  sx={{width: 100,marginRight:'7px'}}
                                 inputProps={{style: {fontSize: 12}}} // font size of input text
                                 InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                                 
                                 />
-                    <RestartAltIcon color="primary" className={classes.restarticon} />
+                    <RestartAltIcon color="primary"  sx={{top:'12px !important'}} className={classes.restarticon} />
                 </Box>
                 
 
             </Box>
         </Box>
       
-        <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between',paddingLeft:'7px',paddingRight:'7px' }}>
+        <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between',paddingLeft:'10px',paddingRight:'10px' }}>
                 <Typography variant='h6'>County Based Value</Typography>
                 <Box sx={{display: {md: 'flex' }}}>
                     <Typography sx={{ background: '#BCD5E3',
                       padding: '5px 5px 0px 5px',
-                      borderRadius: '5px',marginRight:'7px'}}>
+                      borderRadius: '5px',marginRight:'7px',fontSize:'12px'}}>
                       56.45
                   </Typography>
 
-                  <LightbulbIcon color='primary' className={classes.restarticon} sx={{top:0}} />
+                  <LightbulbIcon color='primary'  sx={{top:'3px !important'}} className={classes.restarticon}/>
                 </Box>
 
         </Box>
         <Box className={classes.prodFact}>
-                    <Typography variant='h3' sx={{lineHeight:2.167}}> Prod.Factor 1.45 </Typography>
-                    <Slider defaultValue={50} size="small" aria-label="Default" valueLabelDisplay="auto" sx={{marginLeft:'4rem',width:'50%'}}/>
+                    <Typography variant='h3' sx={{lineHeight:2.167,marginRight:'2rem'}}> Prod.Factor 1.45 </Typography>
+                    <Slider defaultValue={50} size="small" aria-label="Default" valueLabelDisplay="auto" sx={{width:'45%'}}/>
         </Box>
         <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'7px',paddingRight:'7px', display: {md: 'flex' }}}>
-            <Typography variant='h3' sx={{lineHeight:2.167}}>Coverage Level</Typography>
+            <Typography variant='h3'>Coverage/Level</Typography>
                 <Autocomplete
                     disablePortal
                     id="combo-box-demo"
                     options={top100Films}
                     size="small"
-                    sx={{marginRight:'4rem',width:"63px",marginLeft:'10px'}}
+                    sx={{width:"63px",marginLeft:'10px'}}
                     renderInput={(params) => <TextField {...params} 
                     label="80%" 
                     // inputProps={{style: {fontSize: 12}}} // font size of input text

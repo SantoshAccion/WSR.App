@@ -1,3 +1,8 @@
+// body {
+//     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+//     font-weight: 300;
+//  }
+
 #autocomplete-box {
     .MuiOutlinedInput-root{
         padding-top: 0px;
@@ -12,17 +17,14 @@
     }
 }
 #grid-panel {
-    .MuiTabs-flexContainer{
-        justify-content: space-between;
+    .MuiTabs-flexContainer button{
+        text-transform: capitalize !important;
     }
     .css-19kzrtu {
         padding: 7px;
     }
 }
 #grid-card-panel{
-    .MuiTabs-flexContainer{
-        justify-content: space-between;
-    }
     .css-19kzrtu {
         padding: 5px;
     }
@@ -38,16 +40,20 @@
         color: #fff;
         min-height: auto;
         border-radius: 5px;
+        margin-right: 10px;
+        line-height: 0.25;
     }
 }
 
 #data-table {
     th{
-        padding: 0;
+        padding: 2px 5px;
         width: 70px;
+        font-size: 10px;
     }
     td{
-        padding: 0;
+        padding: 2px 5px;
+        font-size: 10px;
     }
     
 }
@@ -79,5 +85,21 @@
         margin: 0;
     }
 }
+#app-box li>div{
+    padding:5px 9px;
+}
+#panel1a-header{
+    padding: 0;
+    background: #45494D;
+    padding: 5px 9px;
+    min-height: unset;
+}
+#panel1a-header>div{
+    margin: 0;
+}
+#panel1a-content>div{
+    padding:0;
+}
+
 
 

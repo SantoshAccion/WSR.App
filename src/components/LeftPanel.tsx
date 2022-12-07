@@ -18,7 +18,8 @@ const useStyles = makeStyles({
     
     appbox:{
       backgroundColor: '#fff',
-      maxWidth: 50,
+      maxWidth: 42,
+      width: '100%'
     },
   
   });
@@ -27,7 +28,7 @@ const LeftPanel = () => {
     const classes = useStyles();
 
   return (
-        <Box className={classes.appbox} sx={{ width: '100%', }}>
+        <Box className={classes.appbox} id="app-box">
             <nav aria-label="main mailbox folders">
                 <List>
                     <ListItem disablePadding>

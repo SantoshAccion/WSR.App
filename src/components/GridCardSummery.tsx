@@ -14,6 +14,15 @@ import ListItemText from '@mui/material/ListItemText';
 import CommentIcon from '@mui/icons-material/Comment';
 import IconButton from '@mui/material/IconButton';
 
+const useStyles = makeStyles({
+  tabNames:{
+    fontSize:'12px !important',
+    minWidth:'60px !important',
+    padding:'0px !important',
+    letterSpacing:'0px !important'
+  }
+})
+
 
 
 interface TabPanelProps {
@@ -50,6 +59,7 @@ interface TabPanelProps {
  
 
 const GridCardSummery = () => {
+  const classes = useStyles()
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -91,10 +101,10 @@ const GridCardSummery = () => {
                     },
                 }}
                 >
-                    <Tab label="Summery" {...a11yProps(0)} sx={{fontSize:'12px',textTransform:'capitalize',minWidth:'70px',padding:0}}/>
-                    <Tab label="Performance" {...a11yProps(1)} sx={{fontSize:'12px',textTransform:'capitalize',minWidth:'70px',padding:0}}/>
-                    <Tab label="Dates" {...a11yProps(2)} sx={{fontSize:'12px',textTransform:'capitalize',minWidth:'70px',padding:0}}/>
-                    <Tab label="Rainfall" {...a11yProps(3)} sx={{fontSize:'12px',textTransform:'capitalize',minWidth:'70px',padding:0}}/>
+                    <Tab label="Summery" {...a11yProps(0)} className={classes.tabNames} />
+                    <Tab label="Performance" {...a11yProps(1)} className={classes.tabNames} />
+                    <Tab label="Dates" {...a11yProps(2)} className={classes.tabNames} />
+                    <Tab label="Rainfall" {...a11yProps(3)} className={classes.tabNames} />
 
                 </Tabs>
             </Box>

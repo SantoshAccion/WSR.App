@@ -13,7 +13,18 @@ const useStyles = makeStyles({
   outerborder:{
     border: '1px solid',
     borderRadius: '20px',
-    padding: '2px'
+    padding: '2px',
+    height:'12px !important',
+    width:'12px !important',
+    position: 'relative',
+    top: '5px'
+
+  },
+  mainBox:{
+    flexGrow: 1,
+    marginTop:'8px',
+    paddingLeft:'7px',paddingRight:'7px', 
+    display: 'flex',
   }
 
 });
@@ -151,15 +162,15 @@ const QuoteList = () => {
       ];
   return (
     <div>
-        <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'5px',paddingRight:'5px', display: {md: 'flex' },justifyContent:'space-between'}}> 
-            <VisibilityIcon />
+        <Box className={classes.mainBox}> 
+            <VisibilityIcon sx={{marginRight:'6px'}}/>
             <Box>
                 <Autocomplete
                     disablePortal
                     id="combo-box-demo"
                     options={top100Films}
                     size="small"
-                    sx={{marginRight:'8px',width:'101px'}}
+                    sx={{marginRight:'6px',width:'101px'}}
                     renderInput={(params) => 
                         <TextField {...params} 
                             label="243431" 
@@ -170,7 +181,7 @@ const QuoteList = () => {
                 />
             </Box>
             
-                <TextField className="textbox-outlined" id="outlined-basic" label="GISI" variant="outlined" size="small" sx={{width:200}}
+                <TextField className="textbox-outlined" id="outlined-basic" label="GISI" variant="outlined" size="small" sx={{width:200,marginRight:'6px'}}
                     inputProps={{style: {fontSize: 12,height: 11}}} // font size of input text
                     InputLabelProps={{style: {fontSize: 12}}} // font size of input label
                 />

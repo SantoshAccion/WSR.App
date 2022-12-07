@@ -55,7 +55,8 @@ export default function DataTable(props) {
           {rows.map((row) => (
             <TableRow
               key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 },'tr:nth-child(odd)':{background:props.tableColor} }}
+              // sx={{ '&:last-child td, &:last-child th': { border: 0 },'&>:nth-child(odd)':{background:props.tableColor} }}
+              sx={{ '&:last-child td, &:last-child th': { border: 0} }}
             >
               <TableCell component="th" scope="row">
                 {row.name}

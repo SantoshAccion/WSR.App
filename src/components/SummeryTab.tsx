@@ -2,7 +2,11 @@ import React from 'react'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import {Box} from '@mui/material'
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 interface TabPanelProps {
@@ -47,30 +51,49 @@ const SummeryTab = () => {
 
   return (
     <>
-        <Box sx={{ width: '100%' }} id="grid-panel">
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" 
-            TabIndicatorProps={{
-                sx: {
-                  backgroundColor: 'primary',
-                },
-              }}
+        
+
+
+        <div style={{marginTop:'3px'}}>
+          <Accordion sx={{boxShadow:'none'}}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon sx={{color:'#fff'}}/>}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              
             >
-                <Tab label="Summary" {...a11yProps(0)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                <Tab label="Enterprise" {...a11yProps(1)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                <Tab label="Acreage" {...a11yProps(2)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-            </Tabs>
-        </Box>
-        <TabPanel value={value} index={0}>
-          
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-            Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-            Item Three
-        </TabPanel>
-        </Box>
+              <Typography variant='h5'>Summary</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                  <Box sx={{ width: '100%' }} id="grid-panel">
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" 
+                        TabIndicatorProps={{
+                            sx: {
+                              backgroundColor: 'primary',
+                            },
+                          }}
+                        >
+                            <Tab label="Summary" {...a11yProps(0)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
+                            <Tab label="Enterprise" {...a11yProps(1)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
+                            <Tab label="Acreage" {...a11yProps(2)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
+                        </Tabs>
+                    </Box>
+                    <TabPanel value={value} index={0}>
+                      
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        Item Two
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        Item Three
+                    </TabPanel>
+                  </Box>
+            </AccordionDetails>
+          </Accordion>
+     
+      </div>
+
     </>
   )
 }

@@ -7,7 +7,7 @@ const theme = createTheme({
         text: { primary: "#000000", secondary: "#000000" }
     },
     typography: {
-        fontFamily: "'Helvetica Neue', sans-serif",
+        // fontFamily: "'Helvetica Neue', sans-serif",
         h2: {
             fontSize: "4.375rem",
             color: "#2882F8",
@@ -27,7 +27,6 @@ const theme = createTheme({
         h6: {
             fontSize: "12px",
             color: "#45494D",
-            lineHeight: '2rem'
         },
         
     },
