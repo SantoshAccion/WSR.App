@@ -87,8 +87,8 @@ const DisplayGrid = () => {
                     <Box className={classes.quotediv}>
                       
                           <Box className={classes.premium}>
-                              <Typography variant='h4' sx={{width:'140px'}}>Enterprise Producer Premium</Typography>
-                              <Typography variant='h4'>$10,23000,00</Typography>
+                              <Typography variant='h4' component={'span'} sx={{width:'140px'}}>Enterprise Producer Premium</Typography>
+                              <Typography variant='h4' component={'span'}>$10,23000,00</Typography>
                           </Box>
                           <Box sx={{height:'35rem'}}>
                             {/* loop ll start from here */}

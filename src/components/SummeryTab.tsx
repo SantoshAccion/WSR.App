@@ -27,7 +27,7 @@ interface TabPanelProps {
       >
         {value === index && (
           <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
+            <Typography component={"div"}>{children}</Typography>
           </Box>
         )}
       </div>
@@ -62,7 +62,7 @@ const SummeryTab = () => {
               id="panel1a-header"
               
             >
-              <Typography variant='h5'>Summary</Typography>
+              <Typography component={'span'} variant='h5'>Summary</Typography>
             </AccordionSummary>
             <AccordionDetails>
                   <Box sx={{ width: '100%' }} id="grid-panel">

@@ -33,6 +33,7 @@ const useStyles = makeStyles({
     top: '5px'
   },
 
+
 });
 
 
@@ -178,12 +179,12 @@ const AgentInfo = () => {
                 sx={{ flexGrow: 1,display: {md: 'flex' },
                 justifyContent:'space-between',
                 }}>
-                <Typography variant='h5' sx={{width:'90px'}}>Adams,co Quote1</Typography>
-                <Typography variant='h5' sx={{lineHeight: '2rem',marginRight: '10px'}}>$0.00</Typography>
+                <Typography variant='h5' component={'span'} sx={{width:'90px'}}>Adams,co Quote1</Typography>
+                <Typography variant='h5' component={'span'} sx={{lineHeight: '2rem',marginRight: '10px'}}>$0.00</Typography>
               </Box>
             </AccordionSummary>
             <AccordionDetails>
-                <Box sx={{ flexGrow: 1,marginTop:'8px',paddingLeft:'7px', display: {md: 'flex' }}} id="selection-box" > 
+                <Box sx={{ flexGrow: 1,marginTop:'8px',paddingLeft:'7px', display: {md: 'flex' }}}> 
                       <Box>
                           <Autocomplete
                               disablePortal

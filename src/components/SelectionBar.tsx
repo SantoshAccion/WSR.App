@@ -186,8 +186,8 @@ const SelectionBar = () => {
             <Grid container spacing={2}>
                 
                 <Grid item xs={5}>
-                    <Typography sx={{fontSize:'12px'}}>Select Crop and Year to Add a Quote</Typography>
-                    <Box sx={{ flexGrow: 1,marginTop:'10px', display: {md: 'flex' }}} id="selection-box"> 
+                    <Typography component={'span'} sx={{fontSize:'12px'}}>Select Crop and Year to Add a Quote</Typography>
+                    <Box id="selection-box"> 
                       <Box>
                           <Autocomplete
                               disablePortal
@@ -228,7 +228,7 @@ const SelectionBar = () => {
                 </Grid>
                 
                 <Grid item xs={3}>
-                    <Typography sx={{fontSize:'12px'}}>Index Values & Estimates</Typography>
+                    <Typography component={'span'} sx={{fontSize:'12px'}}>Index Values & Estimates</Typography>
                     <Box sx={{ flexGrow: 1, marginTop:'10px',display: {md: 'flex' } }}> 
                       <Box>
                           <Autocomplete
@@ -267,8 +267,8 @@ const SelectionBar = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={4}>
-                    <Typography sx={{fontSize:'12px'}}>Acres Breakdown</Typography>
-                    <Box sx={{ flexGrow: 1,marginTop:'10px', display: {md: 'flex' }}} id="selection-box"> 
+                    <Typography component={'span'} sx={{fontSize:'12px'}}>Acres Breakdown</Typography>
+                    <Box id="selection-box"> 
                       <Stack spacing={2} direction="row">
                         <Button className={classes.mystyle} sx={{textTransform:'capitalize'}} variant="outlined">1 Acre</Button>
                         <Button className={classes.mystyle} sx={{marginLeft:'0px !important',textTransform:'capitalize'}} variant="outlined">1500 Acres</Button>

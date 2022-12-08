@@ -43,7 +43,7 @@ interface TabPanelProps {
       >
         {value === index && (
           <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
+            <Typography component={"div"}>{children}</Typography>
           </Box>
         )}
       </div>
@@ -67,22 +67,27 @@ const GridCardSummery = () => {
       
       const summery = [
         {
+        id:0,
         name:'Subsidy',
         value:'55%'
       },
       {
+        id:1,
         name:'Total Premium',
         value:'$0.00'
       },
       {
+        id:2,
         name:'Total Indemenity',
         value:'$0.00'
       },
       {
+        id:3,
         name:'Net Indeminity',
         value:'$0.00'
       },
       {
+        id:4,
         name:'Net Coverage',
         value:'$0.00'
       }
@@ -112,7 +117,7 @@ const GridCardSummery = () => {
                 <List id="tabpanel" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                       {summery.map((item) => (
                         <ListItem
-                          key={item.value}
+                          key={item.id}
                           disableGutters
                           secondaryAction={
                             // <IconButton aria-label="comment">

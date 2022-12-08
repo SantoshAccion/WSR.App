@@ -207,7 +207,7 @@ export default function GridCard(props) {
             padding:'10px',
             background:background
             }}>
-            <Typography variant='h6' sx={{lineHeight:'unset'}}>243421 GIS1</Typography>
+            <Typography variant='h6' component={'span'} sx={{lineHeight:'unset'}}>243421 GIS1</Typography>
             <Box sx={{display: {md: 'flex' }}}>
                 <PostAddIcon className={classes.outerborder} color="primary"/>
                 <ShowChartRoundedIcon className={classes.outerborder} color="primary" />
@@ -254,7 +254,7 @@ export default function GridCard(props) {
         </Box>
         <Box sx={{paddingLeft:'10px',paddingRight:'10px'}}>
             <Box id="textfield-box" sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
-                <Typography variant='h6' sx={{lineHeight:'1.9rem'}}>share</Typography>
+                <Typography variant='h6' component={'span'} sx={{lineHeight:'1.9rem'}}>share</Typography>
                 <TextField id="outlined-basic" label="100%" variant="outlined" size="small"  sx={{width: 80,paddingRight: '1.6rem',height:'20px'}}
                             inputProps={{style: {fontSize: 12}}} // font size of input text
                             InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
@@ -263,7 +263,7 @@ export default function GridCard(props) {
                 
             </Box>
             <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
-                <Typography variant='h6' sx={{width:'103px',lineHeight:1.3}}>Insurable Acres by County</Typography>
+                <Typography variant='h6' component={'span'} sx={{width:'103px',lineHeight:1.3}}>Insurable Acres by County</Typography>
                 <Box id="textfield-box">
                     <TextField id="outlined-basic" label="10000" variant="outlined" size="small"  sx={{width: 80,marginRight:'7px'}}
                                 inputProps={{style: {fontSize: 12}}} // font size of input text
@@ -275,7 +275,7 @@ export default function GridCard(props) {
 
             </Box>
             <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
-                <Typography variant='h6' sx={{lineHeight:'2.9rem'}}>Insurable Acres</Typography>
+                <Typography variant='h6' component={'span'} sx={{lineHeight:'2.9rem'}}>Insurable Acres</Typography>
                 <Box id="textfield-box">
                     <TextField id="outlined-basic" label="500" variant="outlined" size="small"  sx={{width: 100,marginRight:'7px'}}
                                 inputProps={{style: {fontSize: 12}}} // font size of input text
@@ -290,7 +290,7 @@ export default function GridCard(props) {
         </Box>
       
         <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between',paddingLeft:'10px',paddingRight:'10px' }}>
-                <Typography variant='h6'>County Based Value</Typography>
+                <Typography variant='h6' component={'span'}>County Based Value</Typography>
                 <Box sx={{display: {md: 'flex' }}}>
                     <Typography sx={{ background: '#BCD5E3',
                       padding: '5px 5px 0px 5px',
@@ -303,11 +303,11 @@ export default function GridCard(props) {
 
         </Box>
         <Box className={classes.prodFact}>
-                    <Typography variant='h3' sx={{lineHeight:2.167,marginRight:'2rem'}}> Prod.Factor 1.45 </Typography>
+                    <Typography variant='h3' component={'span'} sx={{lineHeight:2.167,marginRight:'2rem'}}> Prod.Factor 1.45 </Typography>
                     <Slider defaultValue={50} size="small" aria-label="Default" valueLabelDisplay="auto" sx={{width:'45%'}}/>
         </Box>
         <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'7px',paddingRight:'7px', display: {md: 'flex' }}}>
-            <Typography variant='h3'>Coverage/Level</Typography>
+            <Typography variant='h3' component={'span'}>Coverage/Level</Typography>
                 <Autocomplete
                     disablePortal
                     id="combo-box-demo"
@@ -320,7 +320,7 @@ export default function GridCard(props) {
                     InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
                     />}
                 />
-                <Typography variant='h6' sx={{
+                <Typography variant='h6' component={'span'} sx={{
                     background: '#DFF2FF',
                     padding: '5px 5px 0px 5px',
                     borderRadius: '5px',

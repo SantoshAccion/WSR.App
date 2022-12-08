@@ -8,7 +8,7 @@ export default function TestComponent() {
   }, [])
 
   return (
-    <Typography variant='h4' sx={{color:(theme)=>theme.palette.primary.main,textAlign:'center'}}> Hello WSR Team</Typography> //color='primary'
+    <Typography variant='h4' component={'span'} sx={{color:(theme)=>theme.palette.primary.main,textAlign:'center'}}> Hello WSR Team</Typography> //color='primary'
   );
 }
 
