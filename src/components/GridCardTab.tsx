@@ -4,8 +4,23 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import GridCard from './GridCard';
+import { makeStyles } from '@mui/styles';
 
 
+const useStyles = makeStyles({
+  mainbox: {
+    borderBottom: 1, 
+    borderColor: 'divider',
+    marginLeft:'0.35rem'
+  },
+  tabName:{
+    fontSize:'12px !important',
+    textTransform:'capitalize'
+  }
+  
+
+
+});
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -40,6 +55,8 @@ interface TabPanelProps {
   }
 
 const GridCardTab = () => {
+    const classes = useStyles();
+
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -47,7 +64,7 @@ const GridCardTab = () => {
 
     return (
         <Box sx={{ width: '100%' }} id="grid-card-panel">
-            <Box sx={{ borderBottom: 1, borderColor: 'divider',marginLeft:'0.35rem' }}>
+            <Box className={classes.mainbox}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" id="head-tab"
                     TabIndicatorProps={{
                         sx: {
@@ -55,9 +72,9 @@ const GridCardTab = () => {
                         },
                     }}
                 >
-                    <Tab label="Kent, DE Quote 1" {...a11yProps(0)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                    <Tab label="Kent, DE Quote 2" {...a11yProps(1)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                    <Tab label="Kent, DE Quote 3" {...a11yProps(2)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
+                    <Tab label="Kent, DE Quote 1" {...a11yProps(0)} className={classes.tabName}/>
+                    <Tab label="Kent, DE Quote 2" {...a11yProps(1)} className={classes.tabName}/>
+                    <Tab label="Kent, DE Quote 3" {...a11yProps(2)} className={classes.tabName}/>
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>

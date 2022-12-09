@@ -1,4 +1,9 @@
-
+@media screen and (max-width: 1920px) {
+    #grid-card-panel{
+        margin-left: 5px;
+    }
+    
+}
 @media screen and (max-width: 1680px) {
     #grid-card-panel{
         margin-left: 2.8rem;
@@ -25,7 +30,7 @@
 }
 @media screen and (max-width: 1366px) {
     #grid-card-panel{
-        margin-left: 7.56rem;
+        margin-left: 6.56rem;
     }
     
 }

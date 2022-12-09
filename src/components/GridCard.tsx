@@ -146,6 +146,87 @@ const top100Films = [
     { label: 'Monty Python and the Holy Grail', year: 1975 },
   ];
 
+
+  const useStyles = makeStyles(theme => ({
+    tab: { 
+        '& .MuiBox-root': {
+          padding: '0px',
+          },
+        },
+    prodFact:{
+      display: 'flex',
+      paddingLeft:'10px',
+      paddingRight:'10px'
+    },
+    card:{
+      maxWidth: 350 ,
+      padding:'0px !important',
+      // width:340,
+      width:250,
+      boxShadow: '0px 0px 10px 1px #bdbdbd',
+      marginRight: '6px'
+      },
+      outerborder:{
+        border: '1px solid',
+        borderRadius: '5px',
+        padding: '2px',
+        marginRight:'6px',
+        height:'14px !important',
+        width:'14px !important'
+      },
+      restarticon:{
+        border: '1px solid',
+        padding: '2px',
+        position:'relative',
+        top: '5px !important',
+        borderRadius:'20px',
+        height:'12px !important',
+        width:'12px !important'
+      },
+      mainBox1:{
+        flexGrow: 1, 
+        display: 'flex',
+        justifyContent:'space-between',
+        padding:'10px',
+        
+      },
+      mainBox2:{
+        flexGrow: 1,
+        paddingLeft:'10px',
+        paddingRight:'10px',
+         marginTop:'10px',
+         display: 'flex' ,
+         justifyContent:'space-around' 
+
+         
+      },
+      mainBox3:{
+        flexGrow: 1, 
+        marginTop:'4px',
+        display: 'flex' ,
+        justifyContent:'space-between'
+      },
+      p1:{
+        background: '#BCD5E3',
+        padding: '5px 5px 0px 5px',
+        borderRadius: '5px',
+        marginRight:'7px !important',
+        fontSize:'12px !important'
+      },
+      p2:{
+        background: '#DFF2FF',
+        padding: '5px 5px 0px 5px',
+        borderRadius: '5px',
+        lineHeight: '12px',
+      },
+      textfield:{
+        width: 80,
+        paddingRight: '1.6rem !important',
+        height:'20px'
+      }
+
+    }));
+
 const bull = (
   <Box
     component="span"
@@ -154,59 +235,23 @@ const bull = (
     •
   </Box>
 );
-const useStyles = makeStyles(theme => ({
-  tab: { 
-      '& .MuiBox-root': {
-        padding: '0px',
-        },
-      },
-  prodFact:{
-    display: 'flex',
-    paddingLeft:'10px',
-    paddingRight:'10px'
-  },
-  card:{
-    maxWidth: 350 ,
-    padding:'0px !important',
-    // width:340,
-    width:250,
-    boxShadow: '0px 0px 10px 1px #bdbdbd',
-    marginRight: '10px'
-    },
-    outerborder:{
-      border: '1px solid',
-      borderRadius: '5px',
-      padding: '2px',
-      marginRight:'6px',
-      height:'14px !important',
-      width:'14px !important'
-    },
-    restarticon:{
-      border: '1px solid',
-      padding: '2px',
-      position:'relative',
-      top: '5px !important',
-      borderRadius:'20px',
-      height:'12px !important',
-      width:'12px !important'
-    }
-  }));
+
 
 
 
 export default function GridCard(props) {
-  const classes = useStyles();
-  const background = props.backColor;
+
+  
+
+    const classes = useStyles();
+    const background = props.backColor;
+
+ 
 
   return (
     <Card className={classes.card} id="cards">
       <CardContent sx={{padding:0}}>
-        <Box 
-            sx={{ flexGrow: 1, display: {md: 'flex' },
-            justifyContent:'space-between',
-            padding:'10px',
-            background:background
-            }}>
+        <Box className={classes.mainBox1} sx={{background:background}}>
             <Typography variant='h6' component={'span'} sx={{lineHeight:'unset'}}>243421 GIS1</Typography>
             <Box sx={{display: {md: 'flex' }}}>
                 <PostAddIcon className={classes.outerborder} color="primary"/>
@@ -214,7 +259,7 @@ export default function GridCard(props) {
                 <KeyboardArrowUpIcon sx={{marginRight:'0px'}} className={classes.outerborder} color="primary" />
             </Box>
         </Box>
-        <Box sx={{ flexGrow: 1,paddingLeft:'7px',paddingRight:'7px', marginTop:'10px',display: {md: 'flex' },justifyContent:'space-around' }}> 
+        <Box className={classes.mainBox2}> 
             <Box>
                 <Autocomplete
                 disablePortal
@@ -238,7 +283,7 @@ export default function GridCard(props) {
                     id="combo-box-demo"
                     options={top100Films}
                     size="small"
-                    sx={{marginRight:'6px',width:'130px'}}
+                    sx={{marginRight:'6px',width:'127px'}}
                     renderInput={(params) => 
                         <TextField {...params} 
                         label="No Irrigation Practice" 
@@ -253,16 +298,16 @@ export default function GridCard(props) {
 
         </Box>
         <Box sx={{paddingLeft:'10px',paddingRight:'10px'}}>
-            <Box id="textfield-box" sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
+            <Box id="textfield-box" className={classes.mainBox3}>
                 <Typography variant='h6' component={'span'} sx={{lineHeight:'1.9rem'}}>share</Typography>
-                <TextField id="outlined-basic" label="100%" variant="outlined" size="small"  sx={{width: 80,paddingRight: '1.6rem',height:'20px'}}
+                <TextField id="outlined-basic" label="100%" variant="outlined" size="small" className={classes.textfield}
                             inputProps={{style: {fontSize: 12}}} // font size of input text
                             InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                             
                             />
                 
             </Box>
-            <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
+            <Box className={classes.mainBox3}>
                 <Typography variant='h6' component={'span'} sx={{width:'103px',lineHeight:1.3}}>Insurable Acres by County</Typography>
                 <Box id="textfield-box">
                     <TextField id="outlined-basic" label="10000" variant="outlined" size="small"  sx={{width: 80,marginRight:'7px'}}
@@ -274,7 +319,7 @@ export default function GridCard(props) {
                 </Box>
 
             </Box>
-            <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between' }}>
+            <Box className={classes.mainBox3}>
                 <Typography variant='h6' component={'span'} sx={{lineHeight:'2.9rem'}}>Insurable Acres</Typography>
                 <Box id="textfield-box">
                     <TextField id="outlined-basic" label="500" variant="outlined" size="small"  sx={{width: 100,marginRight:'7px'}}
@@ -289,12 +334,10 @@ export default function GridCard(props) {
             </Box>
         </Box>
       
-        <Box sx={{ flexGrow: 1, marginTop:'4px',display: {md: 'flex' },justifyContent:'space-between',paddingLeft:'10px',paddingRight:'10px' }}>
+        <Box className={classes.mainBox3} sx={{ paddingLeft:'10px',paddingRight:'10px' }}>
                 <Typography variant='h6' component={'span'}>County Based Value</Typography>
                 <Box sx={{display: {md: 'flex' }}}>
-                    <Typography sx={{ background: '#BCD5E3',
-                      padding: '5px 5px 0px 5px',
-                      borderRadius: '5px',marginRight:'7px',fontSize:'12px'}}>
+                    <Typography className={classes.p1}>
                       56.45
                   </Typography>
 
@@ -306,7 +349,7 @@ export default function GridCard(props) {
                     <Typography variant='h3' component={'span'} sx={{lineHeight:2.167,marginRight:'2rem'}}> Prod.Factor 1.45 </Typography>
                     <Slider defaultValue={50} size="small" aria-label="Default" valueLabelDisplay="auto" sx={{width:'45%'}}/>
         </Box>
-        <Box sx={{ flexGrow: 1,marginTop:'10px',paddingLeft:'7px',paddingRight:'7px', display: {md: 'flex' }}}>
+        <Box className={classes.mainBox2}>
             <Typography variant='h3' component={'span'}>Coverage/Level</Typography>
                 <Autocomplete
                     disablePortal
@@ -320,13 +363,7 @@ export default function GridCard(props) {
                     InputLabelProps={{style: {fontSize: 12,top: '-3px'}}} // font size of input label
                     />}
                 />
-                <Typography variant='h6' component={'span'} sx={{
-                    background: '#DFF2FF',
-                    padding: '5px 5px 0px 5px',
-                    borderRadius: '5px',
-                    lineHeight: '12px',
-                    // marginLeft:'6rem'
-                }}>Cove./Acre 56.45</Typography>
+                <Typography variant='h6' component={'span'} className={classes.p2}>Cove./Acre 56.45</Typography>
         </Box>
 
         <GridTable tableColor={background}/>

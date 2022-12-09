@@ -173,6 +173,10 @@ interface TabPanelProps {
         },
     prodFact:{
       display: 'flex'
+    },
+    tabName:{
+      fontSize:'12px !important',
+      textTransform:'capitalize'
     }
     }));
 
@@ -189,14 +193,10 @@ const GridTable = (props) => {
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" 
                 TabIndicatorProps={{
-                    sx: {
-                    backgroundColor: 'primary',
-                    },
-                }}
-                >
-                    <Tab label="Evens" {...a11yProps(0)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                    <Tab label="Grid Pro" {...a11yProps(1)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                    <Tab label="Odds" {...a11yProps(2)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
+                    sx: {backgroundColor: 'primary'},}}>
+                    <Tab label="Evens" {...a11yProps(0)} className={classes.tabName}/>
+                    <Tab label="Grid Pro" {...a11yProps(1)} className={classes.tabName}/>
+                    <Tab label="Odds" {...a11yProps(2)} className={classes.tabName}/>
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>

@@ -32,6 +32,29 @@ const useStyles = makeStyles({
     position: 'relative',
     top: '5px'
   },
+  mt3:{
+    marginTop:'3px'
+  },
+  color:{
+    color:'#fff'
+  },
+  box:{
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent:'space-between',
+  },
+  mainBox1:{
+    flexGrow: 1,
+    marginTop:'8px',
+    paddingLeft:'7px', 
+    display: 'flex'
+  },
+  mainBox2:{
+    position: 'relative',
+    top: '5px',
+    left: '8px',
+    display:'flex'
+  }
 
 
 });
@@ -167,24 +190,20 @@ const AgentInfo = () => {
     { label: 'Monty Python and the Holy Grail', year: 1975 },
   ];
   return (
-      <div style={{marginTop:'3px'}}>
+      <div className={classes.mt3}>
           <Accordion sx={{boxShadow:'none'}}>
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{color:'#fff'}}/>}
+              expandIcon={<ExpandMoreIcon className={classes.color}/>}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              
             >
-              <Box 
-                sx={{ flexGrow: 1,display: {md: 'flex' },
-                justifyContent:'space-between',
-                }}>
+              <Box className={classes.box}>
                 <Typography variant='h5' component={'span'} sx={{width:'90px'}}>Adams,co Quote1</Typography>
                 <Typography variant='h5' component={'span'} sx={{lineHeight: '2rem',marginRight: '10px'}}>$0.00</Typography>
               </Box>
             </AccordionSummary>
             <AccordionDetails>
-                <Box sx={{ flexGrow: 1,marginTop:'8px',paddingLeft:'7px', display: {md: 'flex' }}}> 
+                <Box className={classes.mainBox1}> 
                       <Box>
                           <Autocomplete
                               disablePortal
@@ -226,12 +245,7 @@ const AgentInfo = () => {
                         InputLabelProps={{style: {fontSize: 12,top: '3px'}}} // font size of input label
                         
                         />
-                        <Box sx={{
-                                    position: 'relative',
-                                    top: '5px',
-                                    left: '8px',
-                                    display:'flex'
-                                    }}>
+                        <Box className={classes.mainBox2}>
                             <AddIcon className={classes.outerborder} color="primary" />
                             <DeleteOutlineTwoToneIcon className={classes.outerborder} color="primary" />
                         </Box>

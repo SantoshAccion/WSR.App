@@ -7,6 +7,17 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  tabName: {
+    fontSize:'12px !important',
+    textTransform:'capitalize'
+  },
+ 
+
+
+});
 
 
 interface TabPanelProps {
@@ -42,6 +53,7 @@ interface TabPanelProps {
   }
 
 const SummeryTab = () => {
+  const classes = useStyles();
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -74,9 +86,9 @@ const SummeryTab = () => {
                             },
                           }}
                         >
-                            <Tab label="Summary" {...a11yProps(0)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                            <Tab label="Enterprise" {...a11yProps(1)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
-                            <Tab label="Acreage" {...a11yProps(2)} sx={{fontSize:'12px',textTransform:'capitalize'}}/>
+                            <Tab label="Summary" {...a11yProps(0)} className={classes.tabName}/>
+                            <Tab label="Enterprise" {...a11yProps(1)} className={classes.tabName}/>
+                            <Tab label="Acreage" {...a11yProps(2)} className={classes.tabName}/>
                         </Tabs>
                     </Box>
                     <TabPanel value={value} index={0}>

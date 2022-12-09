@@ -9,41 +9,20 @@ import Stack from '@mui/material/Stack';
 
 
 
-
-// const theme = createTheme({
-//   overrides: {
-//     MuiInputLabel: {
-//       outlined: {
-//         transform: "translate(14px, 12.5px) scale(1)"
-//       }
-//     },
-//     MuiOutlinedInput: {
-//       root: {
-//         "& $notchedOutline": {
-//           borderColor: "green"
-//         },
-//         "&:hover $notchedOutline": {
-//           borderColor: "red"
-//         },
-//         "&$focused $notchedOutline": {
-//           borderColor: "purple"
-//         },
-//         "&&& $input": {
-//           padding: "1px"
-//         }
-//       }
-//     }
-//   }
-// });
-
 const useStyles = makeStyles({
   mystyle: {
     fontSize:'12px !important',
     lineHeight:'3px !important',
     height:'29px !important',
     marginRight:'8px !important'
-    
   },
+  box1:{
+    marginTop:'1rem',paddingLeft:'24px',paddingRight:'24px'
+  },
+  box2:{
+    flexGrow: 1, marginTop:'10px',display: 'flex'
+  }
+
 });
 
 
@@ -181,7 +160,7 @@ const SelectionBar = () => {
   return (
     <>
   
-        <Box sx={{marginTop:'1rem',paddingLeft:'24px',paddingRight:'24px'}} id="autocomplete-box" >
+        <Box className={classes.box1} id="autocomplete-box" >
             
             <Grid container spacing={2}>
                 
@@ -229,7 +208,7 @@ const SelectionBar = () => {
                 
                 <Grid item xs={3}>
                     <Typography component={'span'} sx={{fontSize:'12px'}}>Index Values & Estimates</Typography>
-                    <Box sx={{ flexGrow: 1, marginTop:'10px',display: {md: 'flex' } }}> 
+                    <Box className={classes.box2}> 
                       <Box>
                           <Autocomplete
                             disablePortal

@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   tabNames:{
     fontSize:'12px !important',
     minWidth:'60px !important',
-    padding:'0px !important',
+    padding:'0px 1px 0px 2px !important',
     letterSpacing:'0px !important'
   }
 })
